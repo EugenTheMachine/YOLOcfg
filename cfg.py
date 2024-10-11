@@ -84,7 +84,7 @@ def init_cfg(data_dir: str, model_name: str):
     - model_name (str): name of the YOLO model to use.
     """
     # setting up configs for data augmentation
-    if len(os.listdir(os.path.join(data_dir, "train"))) < 5000:
+    if len(os.listdir(os.path.join(data_dir, "train"))) < 3200:
         flipud=0.5
         fliplr=0.5
     else:
