@@ -46,8 +46,8 @@ results = model.train(epochs=EPOCHS, patience=PATIENCE, max_det=MAX_DET,
 3. After the model finished training, download and save the following files:
 - *weights/last.pt*;
 - *weights/best.pt*;
-- *results.csv*;*
-- *args.yaml*;*
+- *results.csv*;
+- *args.yaml*;
 - *events.out.tfevents.......*;
 
 4. In the end, turn off the current session (in order not to spoil computational quota).
