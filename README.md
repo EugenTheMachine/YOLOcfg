@@ -2,7 +2,9 @@
 Contains YOLO config initializer for our ultralytics YOLO models.
 
 ## Instruction
-Create a Kaggle kernel (Jupyter notebook) with the following code cells:
+1. Set up virtual environment with P100 GPU accelerator;
+
+2. Create a Kaggle kernel (Jupyter notebook) with the following code cells and run them all:
 
 ```bash
 !git clone https://github.com/EugenTheMachine/YOLOcfg.git
@@ -40,3 +42,12 @@ results = model.train(epochs=EPOCHS, patience=PATIENCE, max_det=MAX_DET,
                       fliplr=FLIPLR, batch=BATCH, imgsz=IMGSZ, resume=RESUME,
                      single_cls=SINGLE_CLS, split=SPLIT, plots=PLOTS)
 ```
+
+3. After the model finished training, download and save the following files:
+- *weights/last.pt*;
+- *weights/best.pt*;
+- *results.csv*;*
+- *args.yaml*;*
+- *events.out.tfevents.......*;
+
+4. In the end, turn off the current session (in order not to spoil computational quota).
