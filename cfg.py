@@ -47,7 +47,7 @@ MODEL_ARCHITECTURES = [
     "yolov11x-seg"
 ]
 
-def setup_env(model_name: str, data_dir: str = "/kaggle/working/AugData"):
+def setup_env(model_name: str, data_dir: str = "/kaggle/working/data"):
     """Main function of the module. Sets up the whole environment."""
     install_ultralytics()
     import_data()
