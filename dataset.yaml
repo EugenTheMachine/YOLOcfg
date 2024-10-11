@@ -1,0 +1,4 @@
+train: data/train/images  # Replace with the actual path to your training images
+val: data/val/images  # Replace with the actual path to your validation images (optional)
+test: data/test/images  # Replace with the actual path to your test images (optional)
+names: ['cell']  # Replace with your class names
