@@ -63,7 +63,7 @@ def install_ultralytics():
 
 def import_data():
     """Loads dataset and prepares it"""
-    subprocess.check_call([sys.executable, "-m", "git", "clone", "https://github.com/EugenTheMachine/AugData.git data"])
+    subprocess.run(["git", "clone", "https://github.com/EugenTheMachine/AugData.git", "data"], check=True)
 
 def setup_kaggle():
     """Sets up kaggle environment."""
