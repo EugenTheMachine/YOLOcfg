@@ -3,6 +3,7 @@ import sys
 import shutil
 from pathlib import Path
 import subprocess
+import zipfile
 
 MODEL_ARCHITECTURES = [
     "yolov8n",
@@ -15,19 +16,20 @@ MODEL_ARCHITECTURES = [
     "yolov8m-seg",
     "yolov8l-seg",
     "yolov8x-seg",
-    "yolov9n",
+    "yolov9t",
     "yolov9s",
     "yolov9m",
-    "yolov9l",
-    "yolov9x",
-    "yolov9n-seg",
+    "yolov9c",
+    "yolov9e",
+    "yolov9t-seg",
     "yolov9s-seg",
     "yolov9m-seg",
-    "yolov9l-seg",
-    "yolov9x-seg",
+    "yolov9c-seg",
+    "yolov9e-seg",
     "yolov10n",
     "yolov10s",
     "yolov10m",
+    "yolov10b",
     "yolov10l",
     "yolov10x",
     "yolov10n-seg",
@@ -35,16 +37,16 @@ MODEL_ARCHITECTURES = [
     "yolov10m-seg",
     "yolov10l-seg",
     "yolov10x-seg",
-    "yolov11n",
-    "yolov11s",
-    "yolov11m",
-    "yolov11l",
-    "yolov11x",
-    "yolov11n-seg",
-    "yolov11s-seg",
-    "yolov11m-seg",
-    "yolov11l-seg",
-    "yolov11x-seg"
+    "yolo11n",
+    "yolo11s",
+    "yolo11m",
+    "yolo11l",
+    "yolo11x",
+    "yolo11n-seg",
+    "yolo11s-seg",
+    "yolo11m-seg",
+    "yolo11l-seg",
+    "yolo11x-seg"
 ]
 
 def setup_env(model_name: str, data_dir: str = "/kaggle/working/data"):
@@ -63,7 +65,9 @@ def install_ultralytics():
 
 def import_data():
     """Loads dataset and prepares it"""
-    subprocess.run(["git", "clone", "https://github.com/EugenTheMachine/AugData.git", "data"], check=True)
+    subprocess.run(["wget", "--no-check-certificate", "https://drive.google.com/uc?export=download&id=1ElVOmuWiAS1bOVgXvH7iNKzRKrkS_duk", "-O", "datasets.zip"], check=True)
+    with zipfile.ZipFile("/kaggle/working/celldata.zip", 'r') as zip_ref:
+        zip_ref.extractall()
 
 def setup_kaggle():
     """Sets up kaggle environment."""
@@ -94,10 +98,12 @@ def init_cfg(data_dir: str, model_name: str):
     # checking model name and setting corresponding model configs
     check_model_name(model_name)
     if Path(model_name).stem in MODEL_ARCHITECTURES:
+        print("Init architecture is used. Not a checkpoint...")
         pretrained = False
         resume=False
         epochs=30
     else:
+        print("Pretrained model checkpoint is used...")
         pretrained = True
         resume=True
         epochs=150
