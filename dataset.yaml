@@ -1,4 +1,4 @@
-path: /kaggle/input/livecell-raw/celldata
+path: /kaggle/input/livecell-raw/celldata/celldata
 train: images/train  # Replace with the actual path to your training images
 val: images/val  # Replace with the actual path to your validation images (optional)
 # test: data/test/images  # Replace with the actual path to your test images (optional)
