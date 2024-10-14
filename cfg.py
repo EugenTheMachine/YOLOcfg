@@ -52,7 +52,7 @@ MODEL_ARCHITECTURES = [
 def setup_env(model_name: str, data_dir: str = "/kaggle/working/data"):
     """Main function of the module. Sets up the whole environment."""
     install_ultralytics()
-    import_data()
+    # import_data()
     setup_kaggle()
     return init_cfg(data_dir, model_name)
 
@@ -63,11 +63,11 @@ def install_ultralytics():
     except ImportError:
         subprocess.check_call([sys.executable, "-m", "pip", "install", "ultralytics"])
 
-def import_data():
-    """Loads dataset and prepares it"""
-    subprocess.run(["wget", "--no-check-certificate", "https://drive.google.com/uc?export=download&id=1ElVOmuWiAS1bOVgXvH7iNKzRKrkS_duk", "-O", "datasets.zip"], check=True)
-    with zipfile.ZipFile("/kaggle/working/datasets.zip", 'r') as zip_ref:
-        zip_ref.extractall()
+# def import_data():
+#     """Loads dataset and prepares it"""
+#     subprocess.run(["wget", "--no-check-certificate", "https://drive.google.com/uc?export=download&id=1ElVOmuWiAS1bOVgXvH7iNKzRKrkS_duk", "-O", "datasets.zip"], check=True)
+#     with zipfile.ZipFile("/kaggle/working/datasets.zip", 'r') as zip_ref:
+#         zip_ref.extractall()
 
 def setup_kaggle():
     """Sets up kaggle environment."""
@@ -88,7 +88,7 @@ def init_cfg(data_dir: str, model_name: str):
     - model_name (str): name of the YOLO model to use.
     """
     # setting up configs for data augmentation
-    if len(os.listdir(os.path.join(data_dir, "train", "images"))) < 3200:
+    if len(os.listdir(os.path.join(data_dir, "train", "images"))) < 5000:
         flipud=0.5
         fliplr=0.5
     else:
