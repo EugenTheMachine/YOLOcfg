@@ -66,7 +66,7 @@ def install_ultralytics():
 def import_data():
     """Loads dataset and prepares it"""
     subprocess.run(["wget", "--no-check-certificate", "https://drive.google.com/uc?export=download&id=1ElVOmuWiAS1bOVgXvH7iNKzRKrkS_duk", "-O", "datasets.zip"], check=True)
-    with zipfile.ZipFile("/kaggle/working/celldata.zip", 'r') as zip_ref:
+    with zipfile.ZipFile("/kaggle/working/datasets.zip", 'r') as zip_ref:
         zip_ref.extractall()
 
 def setup_kaggle():
