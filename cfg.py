@@ -110,7 +110,7 @@ def init_cfg(data_dir: str, model_name: str):
     
     patience = 10
     max_det = 5000
-    data = "/kaggle/input/myconfig/dataset.yaml"
+    data = "/kaggle/input/livecell-raw/dataset.yaml"
     batch = 4
     imgsz = 512
     single_cls = True
