@@ -72,7 +72,7 @@ def install_ultralytics():
 def setup_kaggle():
     """Sets up kaggle environment."""
     os.environ['WANDB_MODE'] = 'disabled'
-    shutil.move('/kaggle/working/YOLOcfg/dataset.yaml', '/kaggle/working/dataset.yaml')
+    # shutil.move('/kaggle/working/YOLOcfg/dataset.yaml', '/kaggle/working/dataset.yaml')
 
 def check_model_name(model_name: str):
     """Checks whether model of correct type was specified."""
@@ -110,7 +110,7 @@ def init_cfg(data_dir: str, model_name: str):
     
     patience = 10
     max_det = 5000
-    data = "/kaggle/working/dataset.yaml"
+    data = "/kaggle/input/myconfig/dataset.yaml"
     batch = 4
     imgsz = 512
     single_cls = True
