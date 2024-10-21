@@ -101,7 +101,7 @@ def init_cfg(data_dir: str, model_name: str):
         print("Init architecture is used. Not a checkpoint...")
         pretrained = False
         resume=False
-        epochs=30
+        epochs=500
     else:
         print("Pretrained model checkpoint is used...")
         pretrained = True
