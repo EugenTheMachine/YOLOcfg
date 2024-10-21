@@ -106,7 +106,7 @@ def init_cfg(data_dir: str, model_name: str):
         print("Pretrained model checkpoint is used...")
         pretrained = True
         resume=True
-        epochs=150
+        epochs=500
     
     patience = 10
     max_det = 5000
