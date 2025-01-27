@@ -88,12 +88,8 @@ def init_cfg(data_dir: str, model_name: str):
     - model_name (str): name of the YOLO model to use.
     """
     # setting up configs for data augmentation
-    if len(os.listdir("/kaggle/input/livecell-raw/celldata/celldata/images/train")) < 5000:
-        flipud=0.5
-        fliplr=0.5
-    else:
-        flipud=0.0
-        fliplr=0.0
+    flipud=0.5
+    fliplr=0.5
     
     # checking model name and setting corresponding model configs
     check_model_name(model_name)
