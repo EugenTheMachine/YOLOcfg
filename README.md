@@ -11,7 +11,7 @@ Please, note that for Cell Spheroid Tracking task the hyperparams were slightly 
 For a better understanding what each of the hyperparams is used for, and for seeing the full list of available hyperparams, please refer to [ultralytics documentation](https://docs.ultralytics.com/usage/cfg/).
 
 For a raw model architecture, the following values are returned:
-```
+`
 flipud = 0.5
 fliplr = 0.5
 pretrained = False
@@ -25,10 +25,10 @@ imgsz = 512
 single_cls = True
 split = "val"
 plots = False
-```
+`
 
 For a partially pre-trained model checkpoint, the following values are returned:
-```
+`
 flipud = 0.5
 fliplr = 0.5
 pretrained = True
@@ -42,9 +42,14 @@ imgsz = 512
 single_cls = True
 split = "val"
 plots = False
-```
+`
 
 ## General model training procedure
+Training YOLO models is a huge computationally expensive task, so unless you are a lucky guy who owns at least a 15 GB GPU, you will fail to do it locally. Therefore, you need to use cloud computing services. Most of them do cost money (GCP, AWS, Azure), so our only option are free-of-charge services (Google Colab, Kaggle kernels). We strongly recommend using Kaggle for model training and Google Colab for some other smaller tasks (mostly - quick experiments), as Kaggle kernels provide you with the most preferable cpmputational quotas.
+
+To start using Kaggle, you need register your account and after that verify it through your mobile phone number. **NOTE HERE**: if you have several phone numbers, you can register several accounts and verify them all - in that case, your resulting quota will be several times as large.
+
+Having completed your account verification, create an empty Kaggle kernel (Jupyter notebook on Kaggle platform) and go to the guidelines below.
 
 ### Using initial architecture checkpoint
 When you first start training your model, you should follow the following steps:
