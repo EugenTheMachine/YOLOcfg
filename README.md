@@ -25,6 +25,7 @@ imgsz = 512
 single_cls = True
 split = "val"
 plots = False
+cache = True
 ```
 
 For a partially pre-trained model checkpoint, the following values are returned:
@@ -116,3 +117,5 @@ results = model.train(epochs=EPOCHS, patience=PATIENCE, max_det=MAX_DET,
 - *events.out.tfevents.......*: TensorBoard log file containing information about training (the same as *results.csv*);
 
 4. In the end, turn off the current session (in order not to spoil computational quota).
+
+*Note: added cache*
